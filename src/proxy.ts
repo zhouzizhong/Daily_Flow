@@ -7,7 +7,7 @@ const protectedRoutes = ['/', '/meals', '/schedule', '/habits', '/todos'];
 // 认证相关路由（已登录用户不能访问）
 const authRoutes = ['/login', '/register'];
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
   // 获取会话 token
