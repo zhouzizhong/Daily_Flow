@@ -21,18 +21,18 @@ export const auth = betterAuth({
   // 邮箱/密码认证
   emailAndPassword: {
     enabled: true,
-    requireEmailVerification: false,
+    requireEmailVerification: false, // 生产环境建议开启
     minPasswordLength: 6,
     maxPasswordLength: 32,
   },
 
   // 会话配置
   session: {
-    expiresIn: 60 * 60 * 24 * 7,
-    updateAge: 60 * 60 * 24,
+    expiresIn: 60 * 60 * 24 * 7, // 7 天
+    updateAge: 60 * 60 * 24, // 1 天
     cookieCache: {
       enabled: true,
-      maxAge: 60 * 5,
+      maxAge: 60 * 5, // 5 分钟
     },
   },
 
@@ -60,11 +60,11 @@ export const auth = betterAuth({
   // 安全配置
   rateLimit: {
     enabled: true,
-    window: 60,
-    max: 10,
+    window: 60, // 1 分钟
+    max: 10, // 最多 10 次请求
   },
 
-  // 日志配置
+  // 日志配置（开发环境开启）
   logger: {
     level: process.env.NODE_ENV === 'development' ? 'debug' : 'error',
   },
