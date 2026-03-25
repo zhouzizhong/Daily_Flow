@@ -1,0 +1,17 @@
+name = "daily-flow"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Next.js 构建输出目录
+pages_build_output_dir = ".next"
+
+# D1 数据库绑定（部署时创建数据库后填入 database_id）
+[[d1_databases]]
+binding = "DB"
+database_name = "daily-flow-db"
+database_id = ""  # 创建数据库后替换为实际 ID
+
+# 本地开发配置
+[dev]
+port = 3000
+local_protocol = "http"
