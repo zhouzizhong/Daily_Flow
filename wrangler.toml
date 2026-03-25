@@ -12,6 +12,3 @@ database_id = ""  # 创建数据库后填入
 [dev]
 port = 3000
 local_protocol = "http"
-
-# 禁用遥测（可选）
-send_metrics = false
