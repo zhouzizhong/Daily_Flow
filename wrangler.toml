@@ -2,13 +2,16 @@ name = "daily-flow"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
 
-# D1 数据库绑定（部署时创建数据库后填入 database_id）
+# D1 数据库绑定（部署后在 Dashboard 配置）
 [[d1_databases]]
 binding = "DB"
 database_name = "daily-flow-db"
-database_id = ""  # 创建数据库后替换为实际 ID
+database_id = ""  # 创建数据库后填入
 
 # 本地开发配置
 [dev]
 port = 3000
 local_protocol = "http"
+
+# 禁用遥测（可选）
+send_metrics = false
